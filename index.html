@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>trabajo de perla</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(10deg, #605DEA, #216F94);
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: white;
+      padding: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #006847;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #eaf3ff;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    .search-box {
+      margin-top: 20px;
+    }
+
+    .search-box input, .search-box select {
+      padding: 10px;
+      margin: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .search-box button {
+      padding: 10px 20px;
+      border: none;
+      background: #9C4DBB;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  Trabajo de perla
+</header>
+
+<nav>
+  <a href="#">Inicio</a>
+  <a href="#">Destinos</a>
+  <a href="#">no se</a>
+  <a href="#">Ofertas</a>
+</nav>
+
+<section class="hero">
+  <h1>hola chicos ya no puedo más esta muy dificil</h1>
+  <p>Encuentra viajes por todo México con múltiples destinos turísticos</p>
+
+  <div class="search-box">
+    <input type="text" placeholder="Destino en México">
+    <select>
+      <option>Tipo de viaje</option>
+      <option>Playa</option>
+      <option>Pueblo mágico</option>
+      <option>Aventura</option>
+      <option>Cultural</option>
+    </select>
+    <button>Buscar</button>
+  </div>
+</section>
+
+<div class="container">
+  <h2>Paquetes destacados en México</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Ruta Caribe Mexicano</h3>
+      <p>Cancún, Playa del Carmen y Tulum en un solo viaje.</p>
+      <button>Ver más</button>
+    </div>
+
+    <div class="card">
+      <h3>Centro Histórico</h3>
+      <p>Ciudad de México, Puebla y Querétaro.</p>
+      <button>Ver más</button>
+    </div>
+
+    <div class="card">
+      <h3>Pacífico Aventurero</h3>
+      <p>Puerto Vallarta, Mazatlán y Sayulita.</p>
+      <button>Ver más</button>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h2>más destinos, no se luego me dicen bn como quieren :3</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>Viajes México Plus</h3>
+      <p>Expertos en destinos nacionales.</p>
+    </div>
+
+    <div class="card">
+      <h3>Rutas Azteca</h3>
+      <p>Experiencias culturales y arqueológicas.</p>
+    </div>
+
+    <div class="card">
+      <h3>Aventura MX</h3>
+      <p>Viajes extremos y naturaleza.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 TravelHub México - Viajes dentro del país</p>
+</footer>
+
+</body>
+</html>
