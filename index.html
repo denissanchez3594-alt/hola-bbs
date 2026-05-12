@@ -1,1 +1,294 @@
+export default function AyenPaymentDashboard() {
+  return (
+    <div className="min-h-screen bg-[#0f172a] text-white font-sans overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-purple-500/10"></div>
+
+      <header className="relative z-10 border-b border-white/10 backdrop-blur-xl bg-white/5">
+        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold tracking-wide">Ayen</h1>
+            <p className="text-sm text-slate-300">Plataforma Premium de Pagos para Viajes</p>
+          </div>
+
+          <div className="hidden md:flex items-center gap-4 text-sm text-slate-300">
+            <div className="px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-400/20 text-emerald-300">
+              Pago Seguro SSL
+            </div>
+            <div className="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-400/20 text-cyan-300">
+              Confirmación Automática
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main className="relative z-10 max-w-7xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <section className="lg:col-span-2 space-y-8">
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl hover:scale-[1.01] transition-all duration-500">
+            <div className="flex items-center justify-between mb-6">
+              <div>
+                <h2 className="text-2xl font-bold">Resumen del Viaje</h2>
+                <p className="text-slate-300 mt-1">Verifica tu información antes de realizar el pago.</p>
+              </div>
+              <div className="bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm border border-cyan-400/20">
+                Reserva Confirmada
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/10">
+                <p className="text-slate-400 text-sm">Destino</p>
+                <h3 className="text-xl font-semibold mt-1">Cancún, México</h3>
+              </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/10">
+                <p className="text-slate-400 text-sm">Fecha</p>
+                <h3 className="text-xl font-semibold mt-1">15 Junio - 22 Junio 2026</h3>
+              </div>
+
+              <div className="bg-slate-900/50 p-5 rounded-2xl border border-white/10">
+                <p className="text-slate-400 text-sm">Personas</p>
+                <h3 className="text-xl font-semibold mt-1">2 Adultos</h3>
+              </div>
+
+              <div className="bg-gradient-to-r from-cyan-500 to-blue-600 p-5 rounded-2xl shadow-xl">
+                <p className="text-sm opacity-80">Total a pagar</p>
+                <h3 className="text-3xl font-bold mt-1">$28,950 MXN</h3>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+              <div>
+                <h2 className="text-2xl font-bold">Métodos de Pago</h2>
+                <p className="text-slate-300 mt-1">Selecciona tu método preferido.</p>
+              </div>
+
+              <div className="flex gap-3 flex-wrap">
+                <div className="bg-white text-black px-4 py-2 rounded-xl font-semibold shadow-lg">VISA</div>
+                <div className="bg-red-500 text-white px-4 py-2 rounded-xl font-semibold shadow-lg">Mastercard</div>
+                <div className="bg-blue-500 text-white px-4 py-2 rounded-xl font-semibold shadow-lg">AMEX</div>
+                <div className="bg-[#0070ba] text-white px-4 py-2 rounded-xl font-semibold shadow-lg">PayPal</div>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
+              {[
+                'Tarjeta de Crédito/Débito',
+                'Transferencia Bancaria',
+                'Depósito Bancario',
+                'Pago SPEI',
+                'Pago en Efectivo',
+                'PayPal'
+              ].map((item, index) => (
+                <button
+                  key={index}
+                  className="group bg-slate-900/50 hover:bg-cyan-500/10 border border-white/10 hover:border-cyan-400/30 p-5 rounded-2xl transition-all duration-300 text-left"
+                >
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <h3 className="font-semibold text-lg">{item}</h3>
+                      <p className="text-slate-400 text-sm mt-1">Pago seguro y protegido.</p>
+                    </div>
+                    <div className="w-12 h-12 rounded-xl bg-white/10 group-hover:bg-cyan-400/20 transition-all duration-300 flex items-center justify-center text-xl">
+                      💳
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+
+            <form className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label className="block text-sm text-slate-300 mb-2">Nombre del Titular</label>
+                  <input
+                    type="text"
+                    placeholder="Nombre completo"
+                    className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm text-slate-300 mb-2">Número de Tarjeta</label>
+                  <input
+                    type="text"
+                    placeholder="1234 5678 9012 3456"
+                    className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
+                  />
+                </div>
+              </div>
+
+              <div className="grid md:grid-cols-3 gap-5">
+                <div>
+                  <label className="block text-sm text-slate-300 mb-2">Fecha de Expiración</label>
+                  <input
+                    type="text"
+                    placeholder="MM/AA"
+                    className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm text-slate-300 mb-2">CVV</label>
+                  <input
+                    type="password"
+                    placeholder="***"
+                    className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm text-slate-300 mb-2">Meses sin intereses</label>
+                  <select className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-5 py-4 outline-none focus:border-cyan-400 transition-all">
+                    <option>Seleccionar</option>
+                    <option>3 meses</option>
+                    <option>6 meses</option>
+                    <option>9 meses</option>
+                    <option>12 meses</option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm text-slate-300 mb-2">Subir comprobante (Transferencia/Depósito)</label>
+                <div className="border-2 border-dashed border-white/20 rounded-3xl p-8 text-center bg-slate-900/40 hover:border-cyan-400/40 transition-all duration-300 cursor-pointer">
+                  <div className="text-5xl mb-4">📄</div>
+                  <p className="text-lg font-medium">Arrastra tu comprobante aquí</p>
+                  <p className="text-slate-400 text-sm mt-2">o selecciona un archivo desde tu dispositivo</p>
+                  <input type="file" className="mt-5 text-sm" />
+                </div>
+              </div>
+
+              <div className="bg-emerald-500/10 border border-emerald-400/20 rounded-2xl p-5">
+                <div className="flex items-start gap-4">
+                  <div className="text-2xl">🔒</div>
+                  <div>
+                    <h3 className="font-semibold text-emerald-300">Pago 100% Seguro</h3>
+                    <p className="text-sm text-slate-300 mt-1">
+                      Toda la información es protegida mediante cifrado SSL y estándares de seguridad bancaria.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-3 bg-slate-900/50 border border-white/10 rounded-2xl p-5">
+                <input type="checkbox" className="mt-1 w-5 h-5 accent-cyan-400" />
+                <p className="text-sm text-slate-300 leading-relaxed">
+                  He leído y acepto los términos y condiciones, políticas de privacidad y políticas de pago de Ayen.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => alert('Pago procesado correctamente. Confirmación enviada al correo del cliente.')}
+                className="w-full bg-gradient-to-r from-cyan-500 to-blue-600 hover:scale-[1.02] hover:shadow-cyan-500/30 shadow-2xl transition-all duration-300 py-5 rounded-2xl text-lg font-semibold"
+              >
+                Confirmar y Procesar Pago
+              </button>
+            </form>
+          </div>
+
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl">
+            <h2 className="text-2xl font-bold mb-6">Preguntas Frecuentes</h2>
+
+            <div className="space-y-4">
+              {[
+                {
+                  q: '¿Cuánto tarda en confirmarse mi pago?',
+                  a: 'Los pagos con tarjeta y PayPal se confirman automáticamente. Transferencias y depósitos pueden tardar hasta 24 horas.'
+                },
+                {
+                  q: '¿Puedo pagar a meses sin intereses?',
+                  a: 'Sí, contamos con opciones de 3, 6, 9 y 12 meses sin intereses con tarjetas participantes.'
+                },
+                {
+                  q: '¿Qué pasa si mi pago es rechazado?',
+                  a: 'Puedes intentar nuevamente o elegir otro método de pago disponible en la plataforma.'
+                }
+              ].map((faq, index) => (
+                <div
+                  key={index}
+                  className="bg-slate-900/50 border border-white/10 rounded-2xl p-5 hover:border-cyan-400/20 transition-all"
+                >
+                  <h3 className="font-semibold text-lg">{faq.q}</h3>
+                  <p className="text-slate-300 mt-2 text-sm leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <aside className="space-y-8">
+          <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-8 shadow-2xl sticky top-8">
+            <h2 className="text-2xl font-bold mb-6">Estado del Pago</h2>
+
+            <div className="space-y-5">
+              <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <p className="text-slate-300">Progreso</p>
+                  <span className="text-cyan-300 font-semibold">85%</span>
+                </div>
+                <div className="w-full h-3 bg-slate-800 rounded-full overflow-hidden">
+                  <div className="h-full w-[85%] bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"></div>
+                </div>
+              </div>
+
+              <div className="bg-gradient-to-br from-cyan-500/10 to-blue-500/10 border border-cyan-400/20 rounded-2xl p-5">
+                <h3 className="font-semibold text-lg">Beneficios Ayen</h3>
+                <ul className="mt-4 space-y-3 text-sm text-slate-300">
+                  <li>✔ Atención personalizada 24/7</li>
+                  <li>✔ Pagos protegidos</li>
+                  <li>✔ Confirmación inmediata</li>
+                  <li>✔ Opciones flexibles de pago</li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-900/50 border border-white/10 rounded-2xl p-5">
+                <h3 className="font-semibold mb-4">Transferencia Bancaria</h3>
+                <div className="space-y-3 text-sm text-slate-300">
+                  <div className="flex justify-between">
+                    <span>Banco:</span>
+                    <span>BBVA México</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>CLABE:</span>
+                    <span>012345678901234567</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span>Beneficiario:</span>
+                    <span>Ayen Travel</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-[#0070ba]/10 border border-[#0070ba]/30 rounded-2xl p-5 text-center">
+                <div className="text-4xl mb-3">💙</div>
+                <h3 className="font-bold text-xl">PayPal Disponible</h3>
+                <p className="text-sm text-slate-300 mt-2">
+                  Paga de forma rápida y segura con tu cuenta PayPal.
+                </p>
+
+                <button className="mt-5 bg-[#0070ba] hover:opacity-90 transition-all duration-300 px-6 py-3 rounded-xl font-semibold shadow-lg">
+                  Pagar con PayPal
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </main>
+
+      <footer className="relative z-10 border-t border-white/10 mt-10 bg-white/5 backdrop-blur-xl">
+        <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-400">
+          <p>© 2026 Ayen Travel Agency. Todos los derechos reservados.</p>
+          <div className="flex gap-6">
+            <button className="hover:text-white transition-all">Términos y Condiciones</button>
+            <button className="hover:text-white transition-all">Política de Privacidad</button>
+            <button className="hover:text-white transition-all">Soporte</button>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
 
